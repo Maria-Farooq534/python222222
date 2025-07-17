@@ -1,0 +1,1866 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology"
+     xml:base="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:untitled-ontology-17="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#"
+     xmlns:model-validation-ontology="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology">
+        <rdfs:comment>The Model Validation Ontology is aimed at formally describing the structure and reasoning of quality-aware model composition in intelligent systems. It captures essential concepts like models, inputs, and outputs of the models, the quality requirements such as accuracy and latency, and the selection criteria for appropriate models to accomplish a certain goal. This ontology facilitates automated reasoning about whether a collection of models satisfies given performance requirements for a particular task. It facilitates situations where several models are combined depending on their input-output dependencies and their ability to provide accuracy and latency requirements.</rdfs:comment>
+        <rdfs:isDefinedBy>Umar Memon</rdfs:isDefinedBy>
+        <rdfs:label>Model Validation Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasInputQuality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasInputQuality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Accuracy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Accuracy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputQualities -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputQualities">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#QualityCharacteristics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#constrainsModel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#constrainsModel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasDataflow -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasDataflow">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositeModel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#DataFlow"/>
+        <rdfs:label xml:lang="en">hasDataflow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasInputVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasInputVariable">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasOutputVariable -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasOutputVariable">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasSource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#DataFlow"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable"/>
+        <rdfs:label xml:lang="en">hasSource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasSubSystem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasSubSystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemOfConcern"/>
+        <rdfs:label xml:lang="en">hasSubSystem</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasSubmodel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasSubmodel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositeModel"/>
+        <rdfs:label xml:lang="en">hasSubmodel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasTarget -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasTarget">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#DataFlow"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:label xml:lang="en">hasTarget</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isAssessedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isAssessedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#AcceptanceCriterion"/>
+        <rdfs:label xml:lang="en">isAssessedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isCharacterizedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isCharacterizedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:label xml:lang="en">isCharacterizedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isDefinedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isDefinedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelVariable"/>
+        <rdfs:label xml:lang="en">isDefinedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isEvaluatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isEvaluatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelVariable"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:label xml:lang="en">isEvaluatedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isMeasuredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isMeasuredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:label xml:lang="en">isMeasuredBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isValidatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#isValidatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#AcceptanceCriterion"/>
+        <rdfs:label xml:lang="en">isValidatedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#models -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#models">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemComponent"/>
+        <rdfs:label xml:lang="en">models</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#OutputAccuracyThreshold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#OutputAccuracyThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#OutputAccuracyValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#OutputAccuracyValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasAccuracyOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasAccuracyOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasAccuracyOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasAccuracyThreshold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasAccuracyThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasAccuracyThreshold</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasAccuracyUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasAccuracyUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasAccuracyUnit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasAccuracyValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasAccuracyValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasAccuracyValue
+hasOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasInputQuality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasInputQuality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasLatencyOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasLatencyOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasLatencyOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasLatencyThreshold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasLatencyThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasLatencyThreshold</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasLatencyUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasLatencyUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasLatencyUnit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasLatencyValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasLatencyValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasLatencyValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracyOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracyOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasOutputAccuracyOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracyThreshold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracyThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasOutputAccuracyThreshold</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracyUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracyUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasOutputAccuracyUnit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracyValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputAccuracyValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasOutputAccuracyValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputGoal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputGoal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasOutputGoal</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputLatencyOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputLatencyOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasOutputLatencyOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputLatencyThreshold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputLatencyThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasOutputLatencyThreshold</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputLatencyUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputLatencyUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasOutputLatencyUnit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputLatencyValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputLatencyValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasOutputLatencyValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputQuality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasOutputQuality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasOutputQuality</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputALatencyValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputALatencyValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>inputALatencyValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputAccuracyOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputAccuracyOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:label>inputAccuracyOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputAccuracyThreshold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputAccuracyThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>inputAccuracyThreshold</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputAccuracyUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputAccuracyUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>inputAccuracyUnit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputAccuracyValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputAccuracyValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>inputAccuracyValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputLatencyOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputLatencyOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>inputLatencyOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputLatencyThreshold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputLatencyThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>inputLatencyThreshold</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputLatencyUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#inputLatencyUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>inputLatencyUnit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#comparisonOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#comparisonOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#AcceptanceCriterion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">comparisonOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#dataAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#dataAge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#DataAge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">dataAge</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasMetricName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasMetricName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasMetricName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasOperator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasOutputUnitOfMeasure -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasOutputUnitOfMeasure">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasOutputUnitOfMeasure</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasRequiredValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasRequiredValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasRequiredValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasThreshold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasThreshold">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>hasThreshold</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#hasUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasUnit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#maxRange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#maxRange">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#range"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Ranges"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">maxRange</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#measuredValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#measuredValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Accuracy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">measuredValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#minRange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#minRange">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#range"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Ranges"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">minRange</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#modelDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#modelDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#description"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">modelDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#modelName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#modelName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#name"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">modelName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#range -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#range">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#refreshRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#refreshRate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#UpdateFrequency"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">refreshRate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#resTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#resTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#time"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ResponseTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">resTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#sensitivityCoefficient -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#sensitivityCoefficient">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SensitivityRelationship"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">sensitivityCoefficient</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#stepSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#stepSize">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Quantization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">stepSize</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#systemDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#systemDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#description"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">systemDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#systemName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#systemName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#name"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">systemName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#thresholdValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#thresholdValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#AcceptanceCriterion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">thresholdValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#time -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#time">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#totalDelay -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#totalDelay">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#time"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Latency"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">totalDelay</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#unit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#unit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#UnitOfMeasure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">unit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#variableDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#variableDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#description"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">variableDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#varialeName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#varialeName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#name"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelVariable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">varialeName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015">
+        <dc:identifier>083-BFO</dc:identifier>
+        <rdfs:label xml:lang="en">process</rdfs:label>
+        <skos:altLabel xml:lang="en">event</skos:altLabel>
+        <skos:definition xml:lang="en">(Elucidation) p is a process means p is an occurrent that has some temporal proper part and for some time t, p has some material entity as participant</skos:definition>
+        <skos:example xml:lang="en">An act of selling; the life of an organism; a process of sleeping; a process of cell-division; a beating of the heart; a process of meiosis; the taxiing of an aircraft; the programming of a computer</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
+        <dc:identifier>055-BFO</dc:identifier>
+        <rdfs:label xml:lang="en">quality</rdfs:label>
+        <skos:definition xml:lang="en">(Elucidation) A quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized</skos:definition>
+        <skos:example xml:lang="en">The colour of a tomato; the ambient temperature of this portion of air; the length of the circumference of your waist; the shape of your nose; the shape of your nostril; the mass of this piece of gold</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030">
+        <dc:identifier>024-BFO</dc:identifier>
+        <rdfs:label xml:lang="en">object</rdfs:label>
+        <skos:definition xml:lang="en">(Elucidation) An object is a material entity which manifests causal unity &amp; is of a type instances of which are maximal relative to the sort of causal unity manifested</skos:definition>
+        <skos:example xml:lang="en">An organism; a fish tank; a planet; a laptop; a valve; a block of marble; an ice cube</skos:example>
+        <skos:scopeNote xml:lang="en">A description of three primary sorts of causal unity is provided in Basic Formal Ontology 2.0. Specification and User Guide</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000031">
+        <dc:identifier>074-BFO</dc:identifier>
+        <rdfs:label xml:lang="en">generically dependent continuant</rdfs:label>
+        <skos:altLabel xml:lang="en">g-dependent continuant</skos:altLabel>
+        <skos:definition xml:lang="en">(Elucidation) A generically dependent continuant is an entity that exists in virtue of the fact that there is at least one of what may be multiple copies which is the content or the pattern that multiple copies would share</skos:definition>
+        <skos:example xml:lang="en">The pdf file on your laptop; the pdf file that is a copy thereof on my laptop; the sequence of this protein molecule; the sequence that is a copy thereof in that protein molecule; the content that is shared by a string of dots and dashes written on a page and the transmitted Morse code signal; the content of a sentence; an engineering blueprint</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000145 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000145">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <dc:identifier>057-BFO</dc:identifier>
+        <rdfs:label xml:lang="en">relational quality</rdfs:label>
+        <skos:definition xml:lang="en">b is a relational quality =Def b is a quality &amp; there exists c and d such that c and d are not identical &amp; b specifically depends on c &amp; b specifically depends on d</skos:definition>
+        <skos:example xml:lang="en">A marriage bond; an instance of love; an obligation between one person and another</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#AcceptanceCriterion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#AcceptanceCriterion">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:comment xml:lang="en">It determines if a requirement has been satisfied or not, invloves threshold values and comparison operators.</rdfs:comment>
+        <rdfs:label xml:lang="en">AcceptanceCriterion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Accuracy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Accuracy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#QualityCharacteristics"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Reliability"/>
+        <rdfs:comment xml:lang="en">The quality or state of model being correct or precise. It is ratio of correct predictions made by a model out of the total number of predictions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Accuracy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Bias -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Bias">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Statistical"/>
+        <rdfs:comment xml:lang="en">An error or preference within a model predictions, leading to skewed or false outcomes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bias</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositeModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositeModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <rdfs:comment xml:lang="en">A model composed of multiple sub-models or sub-components that work together.</rdfs:comment>
+        <rdfs:label xml:lang="en">CompositeModel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:comment xml:lang="en">It defines what does a model achieve. It consists of multiple interconnected requirements and their acceptance criteria.</rdfs:comment>
+        <rdfs:label xml:lang="en">CompositionRequirement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#DataAge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#DataAge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Temporal"/>
+        <rdfs:comment xml:lang="en">The time that is passed since data was collected or last updated.</rdfs:comment>
+        <rdfs:label xml:lang="en">DataAge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#DataFlow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#DataFlow">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:comment xml:lang="en">Movement of data through the system or model.</rdfs:comment>
+        <rdfs:label xml:lang="en">DataFlow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelVariable"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable"/>
+        <rdfs:comment xml:lang="en">Variable or number of variables that are used to make a prediction or generate an output.</rdfs:comment>
+        <rdfs:label xml:lang="en">InputVariable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Latency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Latency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Temporal"/>
+        <rdfs:comment xml:lang="en">Delay between input and the start of result generation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Latency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:comment xml:lang="en">A representation of a system, process, or phenomenon that can be evaluated against requirements and has measurable characteristics.</rdfs:comment>
+        <rdfs:label xml:lang="en">Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:comment xml:lang="en">Measurable properties of a model that show its performance, quality, or behavior in specific domains.</rdfs:comment>
+        <rdfs:label xml:lang="en">ModelCharacteristics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelVariable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelVariable">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:comment xml:lang="en">A variable within a model that can be measured, monitored, or controlled.</rdfs:comment>
+        <rdfs:label xml:lang="en">ModelVariable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelVariable"/>
+        <rdfs:comment xml:lang="en">The output generated by input variables or the prediction.</rdfs:comment>
+        <rdfs:label xml:lang="en">OutputVariable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#QualityCharacteristics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#QualityCharacteristics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:comment xml:lang="en">Define a models&apos;s performance.</rdfs:comment>
+        <rdfs:label xml:lang="en">QualityCharacteristics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Quantization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Quantization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:comment xml:lang="en">The process of converting inputs/outputs to a discrete set of values.</rdfs:comment>
+        <rdfs:label xml:lang="en">Quantization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Ranges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Ranges">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:comment xml:lang="en">The set of values that a represent outputs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ranges</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Reliability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Reliability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#QualityCharacteristics"/>
+        <rdfs:comment xml:lang="en">A model&apos;s ability to continuously give accurate outputs for different datasets.</rdfs:comment>
+        <rdfs:label xml:lang="en">Reliability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ResponseTime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ResponseTime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Temporal"/>
+        <rdfs:comment xml:lang="en">Time taken by model to predict or generate response.</rdfs:comment>
+        <rdfs:label xml:lang="en">ResponseTime</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SensitivityRelationship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SensitivityRelationship">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000145"/>
+        <rdfs:comment xml:lang="en">A model&apos;s ability to identify true positive among all actual positive data points.</rdfs:comment>
+        <rdfs:label xml:lang="en">SensitivityRelationship</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Statistical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Statistical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:comment xml:lang="en">The statistical characteristics refer to the numerical properties of data that are used to train, evaluate, and interpret models. I.e. mean, median, mode, std.</rdfs:comment>
+        <rdfs:label xml:lang="en">Statistical</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemComponent">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <rdfs:comment xml:lang="en">A part of a larger system that participates in model execution and can be monitored for performance characteristics.</rdfs:comment>
+        <rdfs:label xml:lang="en">SystemComponent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemOfConcern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemOfConcern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemComponent"/>
+        <rdfs:comment xml:lang="en">The overall system being modeled or analyzed, composed of multiple components.</rdfs:comment>
+        <rdfs:label xml:lang="en">SystemOfConcern</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Temporal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Temporal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:comment xml:lang="en">Characteristics of model that are related to time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Temporal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#UnitOfMeasure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#UnitOfMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ModelCharacteristics"/>
+        <rdfs:comment xml:lang="en">Unit time taken to predict/generate output.</rdfs:comment>
+        <rdfs:label xml:lang="en">UnitOfMeasure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#UpdateFrequency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#UpdateFrequency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Temporal"/>
+        <rdfs:comment xml:lang="en">Change in frequency.</rdfs:comment>
+        <rdfs:label xml:lang="en">UpdateFrequency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Variance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Variance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Statistical"/>
+        <rdfs:comment xml:lang="en">It is a model&apos;s sensitivity to changes in the training data.</rdfs:comment>
+        <rdfs:label xml:lang="en">Variance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#AccuracyRequirement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#AccuracyRequirement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <model-validation-ontology:hasAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:hasAccuracyOperator>
+        <model-validation-ontology:hasAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:hasAccuracyThreshold>
+        <model-validation-ontology:hasAccuracyUnit>%</model-validation-ontology:hasAccuracyUnit>
+        <model-validation-ontology:hasAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</model-validation-ontology:hasAccuracyValue>
+        <model-validation-ontology:hasLatencyOperator>LessThanOrEqual</model-validation-ontology:hasLatencyOperator>
+        <model-validation-ontology:hasLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">450</model-validation-ontology:hasLatencyThreshold>
+        <model-validation-ontology:hasLatencyUnit>milliseconds</model-validation-ontology:hasLatencyUnit>
+        <model-validation-ontology:hasLatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</model-validation-ontology:hasLatencyValue>
+        <untitled-ontology-17:hasMetricName>Accuracy</untitled-ontology-17:hasMetricName>
+        <rdfs:comment>AccuracyRequirement</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#LatencyRequirement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#LatencyRequirement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <model-validation-ontology:hasAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:hasAccuracyOperator>
+        <model-validation-ontology:hasAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:hasAccuracyThreshold>
+        <model-validation-ontology:hasAccuracyUnit>%</model-validation-ontology:hasAccuracyUnit>
+        <model-validation-ontology:hasAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</model-validation-ontology:hasAccuracyValue>
+        <model-validation-ontology:hasLatencyOperator>LessThanOrEqual</model-validation-ontology:hasLatencyOperator>
+        <model-validation-ontology:hasLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">450</model-validation-ontology:hasLatencyThreshold>
+        <model-validation-ontology:hasLatencyUnit>milliseconds</model-validation-ontology:hasLatencyUnit>
+        <model-validation-ontology:hasLatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</model-validation-ontology:hasLatencyValue>
+        <untitled-ontology-17:hasMetricName>Latency</untitled-ontology-17:hasMetricName>
+        <rdfs:comment>LatencyRequirement</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#OutputGoalRequirement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#OutputGoalRequirement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositionRequirement"/>
+        <model-validation-ontology:hasOutputGoal>Predicted_time_to_fill_Tank_C</model-validation-ontology:hasOutputGoal>
+        <rdfs:comment>OutputGoalRequirement</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#current_tank_level_Tank_C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#current_tank_level_Tank_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>current_tank_level_Tank_C</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_current_tank_level_Tank_C"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_flow_rate_pipe_a"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_flow_rate_pipe_b"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_tank_dimension_Tank_C"/>
+        <untitled-ontology-17:hasOutputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_Predicted_time_to_fill_Tank_C"/>
+        <model-validation-ontology:OutputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.75</model-validation-ontology:OutputAccuracyThreshold>
+        <model-validation-ontology:OutputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">95.75</model-validation-ontology:OutputAccuracyValue>
+        <model-validation-ontology:hasOutputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:hasOutputAccuracyOperator>
+        <model-validation-ontology:hasOutputAccuracyUnit>%</model-validation-ontology:hasOutputAccuracyUnit>
+        <model-validation-ontology:hasOutputLatencyOperator>LessThanOrEqual</model-validation-ontology:hasOutputLatencyOperator>
+        <model-validation-ontology:hasOutputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</model-validation-ontology:hasOutputLatencyThreshold>
+        <model-validation-ontology:hasOutputLatencyUnit>milliseconds</model-validation-ontology:hasOutputLatencyUnit>
+        <model-validation-ontology:hasOutputLatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</model-validation-ontology:hasOutputLatencyValue>
+        <model-validation-ontology:hasOutputQuality>Accuracy</model-validation-ontology:hasOutputQuality>
+        <model-validation-ontology:hasOutputQuality>Latency</model-validation-ontology:hasOutputQuality>
+        <rdfs:comment>m1</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_Predicted_time_to_fill_Tank_C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_Predicted_time_to_fill_Tank_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable"/>
+        <rdfs:comment>m1_Predicted_time_to_fill_Tank_C</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_current_tank_level_Tank_C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_current_tank_level_Tank_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m1_current_tank_level_Tank_C</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_flow_rate_pipe_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_flow_rate_pipe_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m1_flow_rate_pipe_a</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_flow_rate_pipe_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_flow_rate_pipe_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m1_flow_rate_pipe_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_tank_dimension_Tank_C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m1_tank_dimension_Tank_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m1_tank_dimension_Tank_C</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_current_tank_level_Tank_C"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_flow_rate_pipe_a"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_flow_rate_pipe_b"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_tank_dimension_Tank_C"/>
+        <untitled-ontology-17:hasOutputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_Predicted_time_to_fill_Tank_C"/>
+        <model-validation-ontology:OutputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.75</model-validation-ontology:OutputAccuracyThreshold>
+        <model-validation-ontology:OutputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">92.75</model-validation-ontology:OutputAccuracyValue>
+        <model-validation-ontology:hasOutputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:hasOutputAccuracyOperator>
+        <model-validation-ontology:hasOutputAccuracyUnit>%</model-validation-ontology:hasOutputAccuracyUnit>
+        <model-validation-ontology:hasOutputLatencyOperator>LessThanOrEqual</model-validation-ontology:hasOutputLatencyOperator>
+        <model-validation-ontology:hasOutputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</model-validation-ontology:hasOutputLatencyThreshold>
+        <model-validation-ontology:hasOutputLatencyUnit>milliseconds</model-validation-ontology:hasOutputLatencyUnit>
+        <model-validation-ontology:hasOutputLatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</model-validation-ontology:hasOutputLatencyValue>
+        <model-validation-ontology:hasOutputQuality>Accuracy</model-validation-ontology:hasOutputQuality>
+        <model-validation-ontology:hasOutputQuality>Latency</model-validation-ontology:hasOutputQuality>
+        <rdfs:comment>m2</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_Predicted_time_to_fill_Tank_C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_Predicted_time_to_fill_Tank_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable"/>
+        <rdfs:comment>m2_Predicted_time_to_fill_Tank_C</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_current_tank_level_Tank_C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_current_tank_level_Tank_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">140</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">140</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m2_current_tank_level_Tank_C</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_flow_rate_pipe_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_flow_rate_pipe_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">94</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m2_flow_rate_pipe_a</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_flow_rate_pipe_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_flow_rate_pipe_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m2_flow_rate_pipe_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_tank_dimension_Tank_C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m2_tank_dimension_Tank_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m2_tank_dimension_Tank_C</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3_pipe_diameter_pipe_a"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3_valve_position_pipe_a"/>
+        <untitled-ontology-17:hasOutputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3_flow_rate_pipe_a"/>
+        <model-validation-ontology:hasOutputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:hasOutputAccuracyOperator>
+        <model-validation-ontology:hasOutputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:hasOutputAccuracyThreshold>
+        <model-validation-ontology:hasOutputAccuracyUnit>%</model-validation-ontology:hasOutputAccuracyUnit>
+        <model-validation-ontology:hasOutputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:hasOutputAccuracyValue>
+        <model-validation-ontology:hasOutputLatencyOperator>LessThanOrEqual</model-validation-ontology:hasOutputLatencyOperator>
+        <model-validation-ontology:hasOutputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</model-validation-ontology:hasOutputLatencyThreshold>
+        <model-validation-ontology:hasOutputLatencyUnit>milliseconds</model-validation-ontology:hasOutputLatencyUnit>
+        <model-validation-ontology:hasOutputLatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</model-validation-ontology:hasOutputLatencyValue>
+        <model-validation-ontology:hasOutputQuality>Accuracy</model-validation-ontology:hasOutputQuality>
+        <model-validation-ontology:hasOutputQuality>Latency</model-validation-ontology:hasOutputQuality>
+        <rdfs:comment>m3</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3_flow_rate_pipe_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3_flow_rate_pipe_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable"/>
+        <rdfs:comment>m3_flow_rate_pipe_a</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3_pipe_diameter_pipe_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3_pipe_diameter_pipe_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m3_pipe_diameter_pipe_a</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3_valve_position_pipe_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m3_valve_position_pipe_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m3_valve_position_pipe_a</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4_pipe_diameter_b"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4_valve_position_pipe_b"/>
+        <untitled-ontology-17:hasOutputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4_flow_rate_pipe_b"/>
+        <model-validation-ontology:hasOutputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:hasOutputAccuracyOperator>
+        <model-validation-ontology:hasOutputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:hasOutputAccuracyThreshold>
+        <model-validation-ontology:hasOutputAccuracyUnit>%</model-validation-ontology:hasOutputAccuracyUnit>
+        <model-validation-ontology:hasOutputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:hasOutputAccuracyValue>
+        <model-validation-ontology:hasOutputLatencyOperator>LessThanOrEqual</model-validation-ontology:hasOutputLatencyOperator>
+        <model-validation-ontology:hasOutputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">190</model-validation-ontology:hasOutputLatencyThreshold>
+        <model-validation-ontology:hasOutputLatencyUnit>milliseconds</model-validation-ontology:hasOutputLatencyUnit>
+        <model-validation-ontology:hasOutputLatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</model-validation-ontology:hasOutputLatencyValue>
+        <model-validation-ontology:hasOutputQuality>Accuracy</model-validation-ontology:hasOutputQuality>
+        <model-validation-ontology:hasOutputQuality>Latency</model-validation-ontology:hasOutputQuality>
+        <rdfs:comment>m4</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4_flow_rate_pipe_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4_flow_rate_pipe_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable"/>
+        <rdfs:comment>m4_flow_rate_pipe_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4_pipe_diameter_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4_pipe_diameter_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m4_pipe_diameter_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4_valve_position_pipe_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m4_valve_position_pipe_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m4_valve_position_pipe_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5_pipe_diameter_b"/>
+        <untitled-ontology-17:hasInputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5_valve_position_pipe_b"/>
+        <untitled-ontology-17:hasOutputVariable rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5_flow_rate_pipe_b"/>
+        <model-validation-ontology:hasOutputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:hasOutputAccuracyOperator>
+        <model-validation-ontology:hasOutputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:hasOutputAccuracyThreshold>
+        <model-validation-ontology:hasOutputAccuracyUnit>%</model-validation-ontology:hasOutputAccuracyUnit>
+        <model-validation-ontology:hasOutputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:hasOutputAccuracyValue>
+        <model-validation-ontology:hasOutputLatencyOperator>LessThanOrEqual</model-validation-ontology:hasOutputLatencyOperator>
+        <model-validation-ontology:hasOutputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</model-validation-ontology:hasOutputLatencyThreshold>
+        <model-validation-ontology:hasOutputLatencyUnit>milliseconds</model-validation-ontology:hasOutputLatencyUnit>
+        <model-validation-ontology:hasOutputLatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</model-validation-ontology:hasOutputLatencyValue>
+        <model-validation-ontology:hasOutputQuality>Accuracy</model-validation-ontology:hasOutputQuality>
+        <model-validation-ontology:hasOutputQuality>Latency</model-validation-ontology:hasOutputQuality>
+        <rdfs:comment>m5</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5_flow_rate_pipe_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5_flow_rate_pipe_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#OutputVariable"/>
+        <rdfs:comment>m5_flow_rate_pipe_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5_pipe_diameter_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5_pipe_diameter_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">92</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m5_pipe_diameter_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5_valve_position_pipe_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#m5_valve_position_pipe_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>m5_valve_position_pipe_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#pipe_diameter_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#pipe_diameter_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>pipe_diameter_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#pipe_diameter_pipe_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#pipe_diameter_pipe_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>pipe_diameter_pipe_a</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#tank_dimension_Tank_C -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#tank_dimension_Tank_C">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>tank_dimension_Tank_C</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#valve_position_pipe_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#valve_position_pipe_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>valve_position_pipe_a</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#valve_position_pipe_b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#valve_position_pipe_b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#InputVariable"/>
+        <model-validation-ontology:hasInputQuality>Accuracy</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:hasInputQuality>Latency</model-validation-ontology:hasInputQuality>
+        <model-validation-ontology:inputALatencyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</model-validation-ontology:inputALatencyValue>
+        <model-validation-ontology:inputAccuracyOperator>GreaterThanOrEqual</model-validation-ontology:inputAccuracyOperator>
+        <model-validation-ontology:inputAccuracyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyThreshold>
+        <model-validation-ontology:inputAccuracyUnit>%</model-validation-ontology:inputAccuracyUnit>
+        <model-validation-ontology:inputAccuracyValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</model-validation-ontology:inputAccuracyValue>
+        <model-validation-ontology:inputLatencyOperator>LessThanOrEqual</model-validation-ontology:inputLatencyOperator>
+        <model-validation-ontology:inputLatencyThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</model-validation-ontology:inputLatencyThreshold>
+        <model-validation-ontology:inputLatencyUnit>milliseconds</model-validation-ontology:inputLatencyUnit>
+        <rdfs:comment>valve_position_pipe_b</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/model-validation-ontology#hasInputQuality">
+        <rdfs:label>hasInputQuality</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#CompositeModel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Model"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemComponent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#SystemOfConcern"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#DataAge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Latency"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#ResponseTime"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#UpdateFrequency"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#QualityCharacteristics"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Quantization"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Ranges"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Statistical"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#Temporal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/92307/ontologies/2025/4/untitled-ontology-17#UnitOfMeasure"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
